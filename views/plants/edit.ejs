@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit <%= plant.name %></title>
+  </head>
+  <body>
+    <h1>Edit <%= plant.name %></h1>
+    <form action="/plants/<%= plant._id %>?_method=PUT" method="POST">
+      <input type="text" name="name" value="<%= plant.name %>" required />
+      <textarea name="description" required><%= plant.description %></textarea>
+      <input type="text" name="image" value="<%= plant.image %>" />
+      <button type="submit">Update</button>
+    </form>
+    <a href="/plants/<%= plant._id %>">Cancel</a>
+  </body>
+</html>

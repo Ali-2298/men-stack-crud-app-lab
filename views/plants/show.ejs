@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= plant.name %></title>
+  </head>
+  <body>
+    <h1><%= plant.name %></h1>
+    <p><%= plant.description %></p>
+
+    <% if (plant.image) { %>
+      <img src="<%= plant.image %>" width="300" />
+    <% } %>
+
+    <a href="/plants/<%= plant._id %>/edit">Edit</a>
+
+    <form action="/plants/<%= plant._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+
+    <a href="/plants">Back</a>
+  </body>
+</html>

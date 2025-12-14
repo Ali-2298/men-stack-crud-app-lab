@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plants</title>
+  </head>
+  <body>
+    <h1>Plants</h1>
+    <a href="/plants/new">Add New Plant</a>
+    <ul>
+      <% plants.forEach((plant) => { %>
+        <li>
+          <a href="/plants/<%= plant._id %>"><%= plant.name %></a>
+          <form action="/plants/<%= plant._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
